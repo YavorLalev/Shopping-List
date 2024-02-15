@@ -39,7 +39,6 @@ export default function HomePage() {
         <span role="img" aria-label="A fish">
           🐠
         </span>
-        Fish Shop
       </Heading>
       <ProductForm onSubmit={handleAddProduct} />
       <hr />

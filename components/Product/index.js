@@ -2,7 +2,7 @@ import useSWR from "swr";
 import { useRouter } from "next/router";
 import { ProductCard } from "./Product.styled";
 import { StyledLink } from "../Link/Link.styled";
-import Comments from "../Comments";
+
 import { StyledButton } from "../Button/Button.styled";
 import { useState } from "react";
 import ProductForm from "../ProductForm";
@@ -61,9 +61,7 @@ export default function Product() {
       )}
       <h2>{data.name}</h2>
       <p>Description: {data.description}</p>
-      <p>
-        Price: {data.price} {data.currency}
-      </p>
+      <p>Category: {data.category}</p>
       <StyledLink href="/">Back to all</StyledLink>
       <StyledButton
         type="button"

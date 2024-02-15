@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import Link from "next/link";
 export const StyledLink = styled(Link)`
   text-decoration: none;
@@ -9,6 +9,18 @@ export const StyledLink = styled(Link)`
   font-size: larger;
   padding: 0.5rem 1rem;
   box-shadow: 0px 1px 5px -2px var(--color-granite);
+
+  ${({ $green }) =>
+    $green === "green" &&
+    css`
+      background-color: green;
+    `}
+
+  ${({ $blue }) =>
+    $blue === "blue" &&
+    css`
+      background-color: blue;
+    `}
 
   &:hover {
     cursor: pointer;

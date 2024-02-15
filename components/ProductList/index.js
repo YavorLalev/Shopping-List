@@ -1,9 +1,15 @@
 import useSWR from "swr";
 import { StyledHeading, StyledList } from "./ProductList.styled";
 import { StyledLink } from "../Link/Link.styled";
+import React, { useState } from "react";
 
 export default function ProductList() {
   const { data, isLoading } = useSWR("/api/products");
+  const [isChecked, setIsChecked] = useState(false);
+
+  function handleToggle() {
+    setIsChecked(!isChecked);
+  }
 
   if (isLoading) {
     return <h1>Loading...</h1>;
@@ -15,13 +21,40 @@ export default function ProductList() {
 
   return (
     <>
-      <StyledHeading>Available Fishes</StyledHeading>
+      <StyledHeading>Products</StyledHeading>
       <StyledList>
-        {data.map((product) => (
-          <li key={product._id}>
-            <StyledLink href={`/${product._id}`}>{product.name}</StyledLink>
-          </li>
-        ))}
+        {data &&
+          data
+            .filter(({ category }) => category === "Food")
+            .map(({ _id, name, description }) => (
+              <li key={_id}>
+                <StyledLink href={`/${_id}`}>
+                  {name} {""}
+                  {description}
+                </StyledLink>
+              </li>
+            ))}
+      </StyledList>
+      <StyledHeading>Fruits and Veggies</StyledHeading>
+      <StyledList>
+        {data
+          .filter(({ category }) => category === "Fruit")
+          .map(({ _id, name }) => (
+            <li key={_id}>
+              {isChecked ? (
+                <StyledLink $green="green" href={`/${_id}`}>
+                  {name}
+                </StyledLink>
+              ) : (
+                <StyledLink $blue="blue" href={`/${_id}`}>
+                  {name}
+                </StyledLink>
+              )}
+              <button type="button" onClick={handleToggle}>
+                {""} ✅
+              </button>
+            </li>
+          ))}
       </StyledList>
     </>
   );

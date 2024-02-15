@@ -1,6 +1,5 @@
 import { StyledForm, StyledHeading, StyledLabel } from "./ProductForm.styled";
 import { StyledButton } from "../Button/Button.styled";
-import useSWR from "swr";
 
 export default function ProductForm({ onSubmit, isEditMode }) {
   return (
@@ -15,6 +14,13 @@ export default function ProductForm({ onSubmit, isEditMode }) {
       <StyledLabel htmlFor="description">
         Description:
         <input type="text" id="description" name="description" />
+      </StyledLabel>
+      <StyledLabel htmlFor="category">
+        Category:
+        <select id="category" name="category">
+          <option value="Fruit">Fruit</option>
+          <option value="Food">Food</option>
+        </select>
       </StyledLabel>
 
       <StyledButton type="submit">Submit</StyledButton>
