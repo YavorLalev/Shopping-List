@@ -2,10 +2,16 @@ import useSWR from "swr";
 import { useRouter } from "next/router";
 import { ProductCard } from "./Product.styled";
 import { StyledLink } from "../Link/Link.styled";
-
+import styled from "styled-components";
 import { StyledButton } from "../Button/Button.styled";
 import { useState } from "react";
 import ProductForm from "../ProductForm";
+
+const ButtonContainer = styled.section`
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+`;
 
 export default function Product() {
   const router = useRouter();
@@ -62,18 +68,20 @@ export default function Product() {
       <h2>{data.name}</h2>
       <p>Quantity: {data.description}</p>
       <p>Category: {data.category}</p>
-      <StyledLink href="/">Back to all</StyledLink>
-      <StyledButton
-        type="button"
-        onClick={() => {
-          setIsEditMode(!isEditMode);
-        }}
-      >
-        Edit
-      </StyledButton>
-      <StyledButton type="button" onClick={() => handleDeleteProduct(id)}>
-        Delete
-      </StyledButton>
+      <ButtonContainer>
+        <StyledLink href="/">Back to all</StyledLink>
+        <StyledButton
+          type="button"
+          onClick={() => {
+            setIsEditMode(!isEditMode);
+          }}
+        >
+          Edit
+        </StyledButton>
+        <StyledButton type="button" onClick={() => handleDeleteProduct(id)}>
+          Delete
+        </StyledButton>
+      </ButtonContainer>
     </ProductCard>
   );
 }

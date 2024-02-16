@@ -10,7 +10,6 @@ export default createGlobalStyle`
     --color-water-10: #f3f5f9;
     --color-foam: #ffffff;
 
-    --gap: 20px;
   }
   
   *,
@@ -24,7 +23,6 @@ export default createGlobalStyle`
     margin: auto;
     font-family: ${workSans.style.fontFamily};
     place-items: center;
-    /* min-height: 100vh; */
     max-width: 60rem;
   }
 `;

@@ -10,8 +10,9 @@ export const StyledLink = styled(Link)`
   font-size: larger;
   padding: 0.5rem 1rem;
   box-shadow: 0px 1px 5px -2px var(--color-granite);
+  border-radius: 8px;
 
-  ${({ $green }) =>
+  /* ${({ $green }) =>
     $green === "green" &&
     css`
       background-color: green;
@@ -21,7 +22,7 @@ export const StyledLink = styled(Link)`
     $blue === "blue" &&
     css`
       background-color: blue;
-    `}
+    `} */
 
   &:hover {
     cursor: pointer;

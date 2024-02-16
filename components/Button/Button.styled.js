@@ -15,8 +15,8 @@ export const StyledButton = styled.button`
       background-color: var(--color-nemo);
       color: var(--color-water-10);
       position: fixed;
-      bottom: 50px;
-      right: 50px;
+      bottom: 40px;
+      right: 40px;
     `}
 
   ${({ $variant }) =>
@@ -26,7 +26,7 @@ export const StyledButton = styled.button`
       color: var(--color-water-10);
       position: fixed;
       bottom: 100px;
-      right: 50px;
+      right: 40px;
     `}
 
   &:hover {
