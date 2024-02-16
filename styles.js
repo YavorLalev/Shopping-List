@@ -24,7 +24,7 @@ export default createGlobalStyle`
     margin: auto;
     font-family: ${workSans.style.fontFamily};
     place-items: center;
-    min-height: 100vh;
-    max-width: 50rem;
+    /* min-height: 100vh; */
+    max-width: 60rem;
   }
 `;

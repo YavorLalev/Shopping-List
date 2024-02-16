@@ -6,6 +6,7 @@ const Headline = styled.h1`
   left: 0;
   width: 100%;
   background-color: white;
+  color: var(--color-nemo);
   margin: 0;
   padding: 20px;
   font-weight: 600;

@@ -29,7 +29,7 @@ export default function ProductList() {
             .map(({ _id, name, quantity }) => (
               <li key={_id}>
                 <StyledLink href={`/${_id}`}>
-                  {name} {""}
+                  {name} {"x "}
                   {quantity}
                 </StyledLink>
               </li>
@@ -39,7 +39,7 @@ export default function ProductList() {
       <StyledList>
         {data
           .filter(({ category }) => category === "Fruit")
-          .map(({ _id, name }) => (
+          .map(({ _id, name, quantity }) => (
             <li key={_id}>
               {isChecked ? (
                 <StyledLink $green="green" href={`/${_id}`}>
@@ -47,7 +47,8 @@ export default function ProductList() {
                 </StyledLink>
               ) : (
                 <StyledLink href={`/${_id}`}>
-                  {name} {""}
+                  {name} {"x "}
+                  {quantity}
                   {/* <button type="button" onClick={handleToggle}>
                     {""} ✅
                   </button> */}

@@ -4,6 +4,7 @@ import ProductForm from "../components/ProductForm";
 import useSWR from "swr";
 import { useState } from "react";
 import { StyledButton } from "@/components/Button/Button.styled";
+import TitleBar from "@/components/Title/Title.styled";
 
 export default function HomePage() {
   const { mutate } = useSWR("/api/products");
@@ -37,6 +38,7 @@ export default function HomePage() {
   }
   return (
     <>
+      {/* <TitleBar /> */}
       {isChecked ? (
         <ProductForm onSubmit={handleAddProduct} />
       ) : (
