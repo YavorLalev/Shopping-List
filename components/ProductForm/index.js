@@ -23,7 +23,7 @@ export default function ProductForm({ onSubmit, isEditMode }) {
         </select>
       </StyledLabel>
 
-      <StyledButton type="submit">Submit</StyledButton>
+      <StyledButton type="submit"> Submit </StyledButton>
     </StyledForm>
   );
 }

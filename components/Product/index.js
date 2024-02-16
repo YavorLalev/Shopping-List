@@ -60,7 +60,7 @@ export default function Product() {
         <ProductForm isEditMode={isEditMode} onSubmit={handleEditProduct} />
       )}
       <h2>{data.name}</h2>
-      <p>Description: {data.description}</p>
+      <p>Quantity: {data.description}</p>
       <p>Category: {data.category}</p>
       <StyledLink href="/">Back to all</StyledLink>
       <StyledButton

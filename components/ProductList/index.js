@@ -46,13 +46,13 @@ export default function ProductList() {
                   {name}
                 </StyledLink>
               ) : (
-                <StyledLink $blue="blue" href={`/${_id}`}>
-                  {name}
+                <StyledLink href={`/${_id}`}>
+                  {name}{" "}
+                  {/* <button type="button" onClick={handleToggle}>
+                    {""} ✅
+                  </button> */}
                 </StyledLink>
               )}
-              <button type="button" onClick={handleToggle}>
-                {""} ✅
-              </button>
             </li>
           ))}
       </StyledList>

@@ -2,14 +2,16 @@ import ProductList from "../components/ProductList";
 import styled from "styled-components";
 import ProductForm from "../components/ProductForm";
 import useSWR from "swr";
-
-const Heading = styled.h1`
-  text-align: center;
-  color: var(--color-nemo);
-`;
+import { useState } from "react";
+import { StyledButton } from "@/components/Button/Button.styled";
 
 export default function HomePage() {
   const { mutate } = useSWR("/api/products");
+  const [isChecked, setIsChecked] = useState(false);
+
+  function handleToggle() {
+    setIsChecked(!isChecked);
+  }
 
   async function handleAddProduct(event) {
     event.preventDefault();
@@ -35,14 +37,16 @@ export default function HomePage() {
   }
   return (
     <>
-      <Heading>
-        <span role="img" aria-label="A fish">
-          🐠
-        </span>
-      </Heading>
-      <ProductForm onSubmit={handleAddProduct} />
-      <hr />
-      <ProductList />
+      {isChecked ? (
+        <ProductForm onSubmit={handleAddProduct} />
+      ) : (
+        <ProductList />
+      )}
+
+      <StyledButton type="button" onClick={handleToggle}>
+        {" "}
+        {!isChecked ? "Add" : "Back"}
+      </StyledButton>
     </>
   );
 }
