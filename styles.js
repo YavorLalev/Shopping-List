@@ -1,4 +1,7 @@
 import { createGlobalStyle } from "styled-components";
+import { Work_Sans } from "next/font/google";
+
+const workSans = Work_Sans({ subsets: ["latin"] });
 
 export default createGlobalStyle`
 :root {
@@ -19,7 +22,7 @@ export default createGlobalStyle`
   body {
     display: grid;
     margin: auto;
-    font-family: system-ui;
+    font-family: ${workSans.style.fontFamily};
     place-items: center;
     min-height: 100vh;
     max-width: 50rem;
