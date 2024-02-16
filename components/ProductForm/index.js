@@ -11,9 +11,9 @@ export default function ProductForm({ onSubmit, isEditMode }) {
         Name:
         <input type="text" id="name" name="name" />
       </StyledLabel>
-      <StyledLabel htmlFor="description">
-        Description:
-        <input type="text" id="description" name="description" />
+      <StyledLabel htmlFor="quantity">
+        Quantity:
+        <input type="text" id="quantity" name="quantity" />
       </StyledLabel>
       <StyledLabel htmlFor="category">
         Category:

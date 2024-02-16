@@ -26,11 +26,11 @@ export default function ProductList() {
         {data &&
           data
             .filter(({ category }) => category === "Food")
-            .map(({ _id, name, description }) => (
+            .map(({ _id, name, quantity }) => (
               <li key={_id}>
                 <StyledLink href={`/${_id}`}>
                   {name} {""}
-                  {description}
+                  {quantity}
                 </StyledLink>
               </li>
             ))}
@@ -47,7 +47,7 @@ export default function ProductList() {
                 </StyledLink>
               ) : (
                 <StyledLink href={`/${_id}`}>
-                  {name}{" "}
+                  {name} {""}
                   {/* <button type="button" onClick={handleToggle}>
                     {""} ✅
                   </button> */}

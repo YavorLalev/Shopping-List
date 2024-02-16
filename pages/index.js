@@ -1,5 +1,5 @@
 import ProductList from "../components/ProductList";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import ProductForm from "../components/ProductForm";
 import useSWR from "swr";
 import { useState } from "react";
@@ -43,9 +43,13 @@ export default function HomePage() {
         <ProductList />
       )}
 
-      <StyledButton type="button" onClick={handleToggle}>
+      <StyledButton type="button" onClick={handleToggle} $variant="add">
         {" "}
         {!isChecked ? "Add" : "Back"}
+      </StyledButton>
+      <StyledButton type="button" $variant="favorites">
+        {" "}
+        Favorites
       </StyledButton>
     </>
   );
