@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { StyledButton } from "../Button/Button.styled";
-import { useState } from "react";
+import ShoppingCart from "@/utils/ShoppingCart";
+import ShoppingList from "@/utils/ShoppingList";
 
 const StyledFooter = styled.footer`
   list-style-type: none;
@@ -14,7 +15,6 @@ const StyledFooter = styled.footer`
   width: 100%;
   background-color: white;
   margin: 0;
-  padding: 0;
 `;
 
 export default function NavBar({ isChecked, onClick }) {
@@ -23,11 +23,10 @@ export default function NavBar({ isChecked, onClick }) {
       {" "}
       <StyledButton type="button" onClick={onClick} $variant="footer">
         {" "}
-        {!isChecked ? "Add" : "Back"}
+        {!isChecked ? <ShoppingCart /> : "Back"}
       </StyledButton>{" "}
       <StyledButton type="button" $variant="footer">
-        {" "}
-        Favorites
+        <ShoppingList />
       </StyledButton>
     </StyledFooter>
   );

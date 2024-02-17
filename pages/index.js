@@ -44,14 +44,6 @@ export default function HomePage() {
         <ProductList />
       )}
       <NavBar isChecked={isChecked} onClick={handleToggle} />
-      {/* <StyledButton type="button" onClick={handleToggle} $variant="add">
-        {" "}
-        {!isChecked ? "Add" : "Back"}
-      </StyledButton>
-      <StyledButton type="button" $variant="favorites">
-        {" "}
-        Favorites
-      </StyledButton> */}
     </>
   );
 }
