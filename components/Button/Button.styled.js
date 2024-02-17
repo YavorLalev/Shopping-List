@@ -29,6 +29,15 @@ export const StyledButton = styled.button`
       right: 40px;
     `}
 
+    ${({ $variant }) =>
+    $variant === "footer" &&
+    css`
+      background-color: var(--color-nemo);
+      color: var(--color-water-10);
+      width: 100%;
+      border-radius: 0;
+    `}
+
   &:hover {
     cursor: pointer;
   }

@@ -1,6 +1,7 @@
 import TitleBar from "../Title/Title.styled";
 import styled from "styled-components";
 import Head from "next/head.js";
+import NavBar from "../Navigation";
 
 const Main = styled.main`
   display: grid;
@@ -19,6 +20,7 @@ export default function Layout({ children }) {
       </Head>
       <TitleBar />
       <Main>{children}</Main>
+      <NavBar />
     </>
   );
 }

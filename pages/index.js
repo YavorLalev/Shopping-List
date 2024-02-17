@@ -4,14 +4,14 @@ import ProductForm from "../components/ProductForm";
 import useSWR from "swr";
 import { useState } from "react";
 import { StyledButton } from "@/components/Button/Button.styled";
-import TitleBar from "@/components/Title/Title.styled";
 
-export default function HomePage() {
+export default function HomePage({ onClick }) {
   const { mutate } = useSWR("/api/products");
   const [isChecked, setIsChecked] = useState(false);
 
   function handleToggle() {
     setIsChecked(!isChecked);
+    onClick();
   }
 
   async function handleAddProduct(event) {
@@ -38,21 +38,20 @@ export default function HomePage() {
   }
   return (
     <>
-      {/* <TitleBar /> */}
       {isChecked ? (
         <ProductForm onSubmit={handleAddProduct} />
       ) : (
         <ProductList />
       )}
 
-      <StyledButton type="button" onClick={handleToggle} $variant="add">
+      {/* <StyledButton type="button" onClick={handleToggle} $variant="add">
         {" "}
         {!isChecked ? "Add" : "Back"}
       </StyledButton>
       <StyledButton type="button" $variant="favorites">
         {" "}
         Favorites
-      </StyledButton>
+      </StyledButton> */}
     </>
   );
 }
