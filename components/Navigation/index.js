@@ -17,16 +17,11 @@ const StyledFooter = styled.footer`
   padding: 0;
 `;
 
-export default function NavBar() {
-  const [isChecked, setIsChecked] = useState(false);
-
-  function handleToggle() {
-    setIsChecked(!isChecked);
-  }
+export default function NavBar({ isChecked, onClick }) {
   return (
     <StyledFooter>
       {" "}
-      <StyledButton type="button" onClick={handleToggle} $variant="footer">
+      <StyledButton type="button" onClick={onClick} $variant="footer">
         {" "}
         {!isChecked ? "Add" : "Back"}
       </StyledButton>{" "}

@@ -4,14 +4,14 @@ import ProductForm from "../components/ProductForm";
 import useSWR from "swr";
 import { useState } from "react";
 import { StyledButton } from "@/components/Button/Button.styled";
+import NavBar from "@/components/Navigation";
 
-export default function HomePage({ onClick }) {
+export default function HomePage() {
   const { mutate } = useSWR("/api/products");
   const [isChecked, setIsChecked] = useState(false);
 
   function handleToggle() {
     setIsChecked(!isChecked);
-    onClick();
   }
 
   async function handleAddProduct(event) {
@@ -43,7 +43,7 @@ export default function HomePage({ onClick }) {
       ) : (
         <ProductList />
       )}
-
+      <NavBar isChecked={isChecked} onClick={handleToggle} />
       {/* <StyledButton type="button" onClick={handleToggle} $variant="add">
         {" "}
         {!isChecked ? "Add" : "Back"}

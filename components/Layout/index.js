@@ -20,7 +20,7 @@ export default function Layout({ children }) {
       </Head>
       <TitleBar />
       <Main>{children}</Main>
-      <NavBar />
+      {/* <NavBar /> */}
     </>
   );
 }
