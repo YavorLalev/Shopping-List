@@ -20,6 +20,7 @@ export default function ProductForm({ onSubmit, isEditMode }) {
         <select id="category" name="category">
           <option value="Fruit">Fruit</option>
           <option value="Food">Food</option>
+          <option value="Drogerie">Drogerie</option>
         </select>
       </StyledLabel>
 

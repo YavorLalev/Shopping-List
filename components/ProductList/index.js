@@ -49,13 +49,24 @@ export default function ProductList() {
                 <StyledLink href={`/${_id}`}>
                   {name} {"x "}
                   {quantity}
-                  {/* <button type="button" onClick={handleToggle}>
-                    {""} ✅
-                  </button> */}
                 </StyledLink>
               )}
             </li>
           ))}
+      </StyledList>
+      <StyledHeading>Drogerie</StyledHeading>
+      <StyledList>
+        {data &&
+          data
+            .filter(({ category }) => category === "Drogerie")
+            .map(({ _id, name, quantity }) => (
+              <li key={_id}>
+                <StyledLink href={`/${_id}`}>
+                  {name} {"x "}
+                  {quantity}
+                </StyledLink>
+              </li>
+            ))}
       </StyledList>
     </>
   );
