@@ -14,5 +14,6 @@ export const StyledHeading = styled.h2`
 export const StyledLabel = styled.label`
   display: flex;
   justify-content: space-between;
+  height: 32px;
   gap: 5px;
 `;

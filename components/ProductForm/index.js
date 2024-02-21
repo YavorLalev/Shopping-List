@@ -18,8 +18,8 @@ export default function ProductForm({ onSubmit, isEditMode }) {
       <StyledLabel htmlFor="category">
         Category:
         <select id="category" name="category">
-          <option value="Fruit">Fruit</option>
           <option value="Food">Food</option>
+          <option value="Fruit">Fruit</option>
           <option value="Drogerie">Drogerie</option>
         </select>
       </StyledLabel>
